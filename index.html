@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body class="theme-orange">
+  <script>
+    if (localStorage.getItem('theme') === 'light') {
+      document.body.classList.add('light-theme');
+    }
+  </script>
   <!-- Top Emergency & Announcement Bar -->
   <div class="top-bar">
     <div class="container top-bar-content">
@@ -56,6 +61,11 @@
       </nav>
 
       <div class="nav-actions">
+        <div class="theme-switch-wrapper">
+          <button class="theme-switch-btn" id="themeToggleBtn" aria-label="Alternar Tema">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+        </div>
         <a href="#simulador" class="btn btn-primary btn-nav">
           <span>Solicitar Orçamento</span>
           <i class="fa-solid fa-arrow-right"></i>
