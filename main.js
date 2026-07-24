@@ -3,6 +3,7 @@
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeSystem();
   initMobileMenu();
   initCalculator();
   initTabsFilter();
@@ -366,4 +367,45 @@ function initContactForm() {
       form.reset();
     });
   }
+}
+
+/* --------------------------------------------------------------------------
+   7. LIGHT / DARK THEME SYSTEM
+   -------------------------------------------------------------------------- */
+function initThemeSystem() {
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  if (!themeToggleBtn) return;
+
+  const themeIcon = themeToggleBtn.querySelector('i');
+
+  // Check saved theme or default to dark
+  const currentTheme = localStorage.getItem('theme');
+
+  if (currentTheme === 'light') {
+    document.body.classList.add('light-theme');
+    if (themeIcon) {
+      themeIcon.className = 'fa-solid fa-sun';
+    }
+  } else {
+    document.body.classList.remove('light-theme');
+    if (themeIcon) {
+      themeIcon.className = 'fa-solid fa-moon';
+    }
+  }
+
+  themeToggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+    let theme = 'dark';
+    if (document.body.classList.contains('light-theme')) {
+      theme = 'light';
+      if (themeIcon) {
+        themeIcon.className = 'fa-solid fa-sun';
+      }
+    } else {
+      if (themeIcon) {
+        themeIcon.className = 'fa-solid fa-moon';
+      }
+    }
+    localStorage.setItem('theme', theme);
+  });
 }
