@@ -136,7 +136,7 @@ function initCalculator() {
     if (sumDays) sumDays.textContent = days;
 
     // Format WhatsApp Link
-    const waPhone = "5511999999999";
+    const waPhone = "5511940392547";
     const waText = encodeURIComponent(
       `*Olá, MKL Serviços! Fiz uma simulação pelo site:*
 ` +
@@ -362,7 +362,7 @@ function initContactForm() {
       );
 
       alert(`Obrigado ${name}! Redirecionando para o WhatsApp da MKL Serviços...`);
-      window.open(`https://wa.me/5511999999999?text=${waText}`, '_blank');
+      window.open(`https://wa.me/5511940392547?text=${waText}`, '_blank');
       form.reset();
     });
   }
