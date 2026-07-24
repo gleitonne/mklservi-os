@@ -3,720 +3,304 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MKL Serviços | Reforma Residencial, Predial e Elétrica em Geral</title>
-  <meta name="description" content="MKL Serviços: Especialista em reforma residencial, reforma predial e instalações elétricas em geral. Segurança NBR 5410, garantia em contrato e atendimento de excelência.">
-  <meta name="keywords" content="MKL Serviços, reforma residencial, reforma predial, elétrica em geral, eletricista 24h, pintura predial, impermeabilização, manutenção condominial">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="./styles.css">
+  <title>MKL Serviços</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f9fbfd;
+      color: #2d3748;
+    }
+
+    .navbar { background: linear-gradient(90deg, #0055aa, #ff7b00); }
+    .navbar-brand { font-weight: 700; color: #fff !important; font-size: 1.6rem; }
+    .navbar-brand span { color: #469049; }
+    .nav-link { color: #fff !important; font-weight: 500; }
+    .nav-link:hover { text-decoration: underline; }
+
+    section { padding: 60px 0; }
+    .servico-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .servico-card:hover { transform: translateY(-5px); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+
+    .btn-custom {
+      background-color: #0055aa;
+      color: #fff;
+      border: none;
+    }
+    .btn-custom:hover { background-color: #ff7b00; }
+
+    footer { background-color: #0055aa; color: #fff; margin-top: 50px; position: relative; }
+    footer a { color: #fff; text-decoration: none; }
+    footer a:hover { color: #ff7b00; }
+
+    .destaque-card img { width: 100%; height: auto; margin-bottom: 15px; }
+    .contact-link {
+      display: inline-block;
+      background-color: #ff7b00;
+      color: #fff !important;
+      padding: 0.4rem 0.8rem;
+      border-radius: 5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s;
+      margin-bottom: 5px;
+    }
+    .contact-link i { margin-right: 0.4rem; }
+    .contact-link:hover { background-color: #0055aa; color: #fff !important; }
+
+    .carousel-caption h5,
+    .carousel-caption p,
+    .carousel-caption .btn-custom { color: #fff; }
+
+    /* Botão Voltar ao Topo */
+    #btnTopo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ff7b00;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      z-index: 1000;
+      font-size: 24px;
+      transition: background-color 0.3s;
+    }
+    #btnTopo:hover { background-color: #0055aa; }
+
+    /* Evita espaço no topo com navbar fixa */
+    body::before {
+      content: "";
+      display: block;
+      height: 70px;
+    }
+  </style>
 </head>
-<body class="theme-orange">
-  <!-- Top Emergency & Announcement Bar -->
-  <div class="top-bar">
-    <div class="container top-bar-content">
-      <div class="top-bar-info">
-        <span><i class="fa-solid fa-bolt-lightning text-accent"></i> Atendimento Elétrico Emergencial 24 Horas</span>
-        <span class="divider">|</span>
-        <span><i class="fa-solid fa-shield-halved"></i> Garantia por Contrato & Normas NBR 5410</span>
-      </div>
-      <div class="top-bar-contact">
-        <a href="tel:+5511999999999" class="top-link"><i class="fa-solid fa-phone"></i> (11) 99999-9999</a>
-        <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20um%20or%C3%A7amento%20com%20a%20MKL%20Servi%C3%A7os" target="_blank" rel="noopener noreferrer" class="btn-top-whatsapp">
-          <i class="fa-brands fa-whatsapp"></i> WhatsApp Rápido
-        </a>
-      </div>
-    </div>
-  </div>
+<body>
 
-  <!-- Header / Navigation -->
-  <header class="navbar" id="navbar">
-    <div class="container navbar-container">
-      <a href="#" class="brand-logo">
-        <div class="logo-icon">
-          <i class="fa-solid fa-plug-circle-bolt"></i>
-        </div>
-        <div class="logo-text">
-          <span class="logo-name">MKL <span class="text-gradient">SERVIÇOS</span></span>
-          <span class="logo-sub">REFORMAS & ELÉTRICA</span>
-        </div>
-      </a>
-
-      <nav class="nav-menu" id="navMenu">
-        <ul class="nav-list">
-          <li><a href="#inicio" class="nav-link active">Início</a></li>
-          <li><a href="#sobre" class="nav-link">Sobre Nós</a></li>
-          <li><a href="#servicos" class="nav-link">Serviços</a></li>
-          <li><a href="#simulador" class="nav-link highlight-link"><i class="fa-solid fa-calculator"></i> Simulador</a></li>
-          <li><a href="#portfolio" class="nav-link">Projetos</a></li>
-          <li><a href="#depoimentos" class="nav-link">Depoimentos</a></li>
-          <li><a href="#contato" class="nav-link">Contato</a></li>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#topo">MKL <span>Serviços</span></a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#topo">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="#destaques">Projetos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfólio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
         </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <a href="#simulador" class="btn btn-primary btn-nav">
-          <span>Solicitar Orçamento</span>
-          <i class="fa-solid fa-arrow-right"></i>
-        </a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
       </div>
     </div>
-  </header>
+  </nav>
 
-  <!-- Hero Section -->
-  <section id="inicio" class="hero-section">
-    <div class="hero-bg-overlay"></div>
-    <div class="container hero-container">
-      <div class="hero-grid">
-        <div class="hero-content">
-          <div class="hero-badge">
-            <span class="pulse-dot"></span>
-            <span>Excelência em Construção, Reforma & Elétrica</span>
-          </div>
+  <!-- TOPO -->
+  <div id="topo"></div>
 
-          <h1 class="hero-title">
-            Transformamos seu imóvel com <span class="highlight-orange">segurança, agilidade</span> e padrão de alta qualidade.
-          </h1>
-
-          <p class="hero-description">
-            A <strong>MKL Serviços</strong> é especialista em <strong>reforma residencial</strong>, <strong>reforma predial</strong> e <strong>instalações elétricas em geral</strong>. Soluções completas com cumprimento de prazos, contrato formal e engenharia responsável.
-          </p>
-
-          <div class="hero-actions">
-            <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20preciso%20de%20um%20or%C3%A7amento%20para%20reforma%2Fel%C3%A9trica" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-large">
-              <i class="fa-brands fa-whatsapp"></i>
-              <div>
-                <span class="btn-sub">Orçamento Instantâneo</span>
-                <span class="btn-main">Falar no WhatsApp</span>
-              </div>
-            </a>
-
-            <a href="#simulador" class="btn btn-secondary-orange">
-              <i class="fa-solid fa-sliders"></i>
-              <span>Simular Preço Online</span>
-            </a>
-          </div>
-
-          <div class="hero-features">
-            <div class="feature-tag">
-              <i class="fa-solid fa-circle-check"></i>
-              <span>Garantia de 1 Ano</span>
-            </div>
-            <div class="feature-tag">
-              <i class="fa-solid fa-circle-check"></i>
-              <span>Profissionais Certificados</span>
-            </div>
-            <div class="feature-tag">
-              <i class="fa-solid fa-circle-check"></i>
-              <span>Sem Custos Ocultos</span>
-            </div>
+  <!-- CARROSSEL -->
+  <section id="inicio">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="imagem/man-8889170_1280 homen img.jpg" class="d-block w-100" alt="Serviço 1">
+          <div class="carousel-caption d-block">
+            <h5>Excelência no atendimento</h5>
+            <p>Projetos com qualidade, segurança e inovação.</p>
+            <a href="#contato" class="btn btn-custom mt-3">Solicite um Orçamento</a>
           </div>
         </div>
+        <div class="carousel-item">
+          <img src="imagem/wire-1098059_1280 quadro.jpg" class="d-block w-100" alt="Serviço 2">
+          <div class="carousel-caption d-block">
+            <h5>Manutenção Industrial</h5>
+            <p>Serviços eficientes e duradouros.</p>
+            <a href="#contato" class="btn btn-custom mt-3">Solicite um Orçamento</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="imagem/electric-4198293_640.jpg" class="d-block w-100" alt="Serviço 3">
+          <div class="carousel-caption d-block">
+            <h5>Projetos Personalizados</h5>
+            <p>Soluções sob medida para sua necessidade.</p>
+            <a href="#contato" class="btn btn-custom mt-3">Solicite um Orçamento</a>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </section>
 
-        <div class="hero-card-wrapper">
-          <div class="hero-image-card">
-            <img src="./images/hero_banner.png" alt="MKL Serviços reforma e elétrica" class="hero-img">
-            <div class="hero-floating-badge badge-1">
-              <i class="fa-solid fa-star"></i>
-              <div>
-                <strong>4.9 / 5.0</strong>
-                <span>Mais de 350+ Projetos</span>
-              </div>
-            </div>
-            <div class="hero-floating-badge badge-2">
-              <i class="fa-solid fa-bolt"></i>
-              <div>
-                <strong>NBR 5410</strong>
-                <span>Padrão Técnico Seguro</span>
-              </div>
-            </div>
+  <!-- SOBRE -->
+  <section id="sobre" class="container text-center">
+    <h2>Sobre Nós</h2>
+    <p class="mt-3">A <strong>MKL Serviços</strong> com experiência e dedicação realiza manutenção industrial e residencial com máxima segurança e eficiência.</p>
+    <a href="#servicos" class="btn btn-custom mt-3">Conheça Nossos Serviços</a>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="bg-light">
+    <div class="container text-center">
+      <h2>Nossos Serviços</h2>
+      <div class="row mt-4">
+        <div class="col-md-4">
+          <div class="card servico-card p-3">
+            <h4>Instalações Elétricas</h4>
+            <p>Instalações, manutenções e reparos com segurança e eficiência.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card servico-card p-3">
+            <h4>Manutenção Industrial e Residencial</h4>
+            <p>Serviços completos de manutenção industrial e residencial.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card servico-card p-3">
+            <h4>Projetos Personalizados</h4>
+            <p>Planejamento e execução conforme as necessidades do cliente.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Metrics / Stats Section -->
-  <section class="stats-section">
-    <div class="container">
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-icon"><i class="fa-solid fa-building-circle-check"></i></div>
-          <div class="stat-number" data-target="480">0+</div>
-          <div class="stat-label">Reformas Concluídas</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon"><i class="fa-solid fa-plug-circle-bolt"></i></div>
-          <div class="stat-number" data-target="1250">0+</div>
-          <div class="stat-label">Pontos Elétricos Instalados</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon"><i class="fa-solid fa-face-smile"></i></div>
-          <div class="stat-number" data-target="99">0%</div>
-          <div class="stat-label">Satisfação de Clientes</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon"><i class="fa-solid fa-user-shield"></i></div>
-          <div class="stat-number" data-target="12">0</div>
-          <div class="stat-label">Anos de Experiência</div>
+  <!-- PROJETOS EM DESTAQUE -->
+  <section id="destaques" class="container text-center my-5">
+    <h2>Projetos em Destaque</h2>
+    <div class="row justify-content-center mt-4 g-4">
+      <div class="col-lg-12 destaque-card">
+        <div class="card">
+          <img src="imagem/istockphoto-2149528177-612x612 gingante quadro.jpg" class="card-img-top" alt="Projeto 1">
+          <div class="card-body">
+            <p class="card-text">Projeto 1: descrição resumida do serviço ou resultado alcançado.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Services Section -->
-  <section id="servicos" class="services-section">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="badge-subtitle">Nossas Especialidades</span>
-        <h2 class="section-title">Soluções Completas em Reforma & Elétrica</h2>
-        <p class="section-description">
-          Da manutenção emergencial às grandes reformas prediais e residenciais. Atendemos com alta precisão técnica e acabamento de alto padrão.
-        </p>
+      <div class="col-lg-12 destaque-card">
+        <div class="card">
+          <img src="imagem/04b7b3e04745ff35b13fa63a04cca971 quadro grande.jpg" class="card-img-top" alt="Projeto 2">
+          <div class="card-body">
+            <p class="card-text">Projeto 2: descrição resumida do serviço ou resultado alcançado.</p>
+          </div>
+        </div>
       </div>
-
-      <div class="services-tab-buttons">
-        <button class="tab-btn active" data-tab="todos">Todos os Serviços</button>
-        <button class="tab-btn" data-tab="residencial"><i class="fa-solid fa-house-chimney"></i> Reforma Residencial</button>
-        <button class="tab-btn" data-tab="predial"><i class="fa-solid fa-building"></i> Reforma Predial</button>
-        <button class="tab-btn" data-tab="eletrica"><i class="fa-solid fa-bolt"></i> Elétrica em Geral</button>
-      </div>
-
-      <div class="services-grid" id="servicesGrid">
-        <!-- Service Card 1: Reforma Residencial -->
-        <div class="service-card" data-category="residencial">
-          <div class="service-img-holder">
-            <img src="./images/reforma_residencial.png" alt="Reforma Residencial MKL">
-            <div class="service-category-tag">Residencial</div>
-          </div>
-          <div class="service-content">
-            <div class="service-icon"><i class="fa-solid fa-paint-roller"></i></div>
-            <h3 class="service-title">Reforma Residencial Completa</h3>
-            <p class="service-text">
-              Renovação de apartamentos e casas. Acabamento fino, pintura acrílica/látex, instalação de pisos vinílicos e porcelanatos, forros de gesso e sancas com LED.
-            </p>
-            <ul class="service-features-list">
-              <li><i class="fa-solid fa-check"></i> Banheiros e cozinhas planejadas</li>
-              <li><i class="fa-solid fa-check"></i> Troca de revestimentos e nivelamento</li>
-              <li><i class="fa-solid fa-check"></i> Pintura interna e externa</li>
-            </ul>
-            <div class="service-footer">
-              <button class="btn-detail-modal" data-modal="modal-residencial">
-                Mais Detalhes <i class="fa-solid fa-chevron-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Service Card 2: Reforma Predial -->
-        <div class="service-card" data-category="predial">
-          <div class="service-img-holder">
-            <img src="./images/reforma_predial.png" alt="Reforma Predial MKL">
-            <div class="service-category-tag">Predial / Condomínios</div>
-          </div>
-          <div class="service-content">
-            <div class="service-icon"><i class="fa-solid fa-city"></i></div>
-            <h3 class="service-title">Reforma & Manutenção Predial</h3>
-            <p class="service-text">
-              Manutenção estrutural e estética para condomínios, empresas e edifícios. Impermeabilização de lajes, restauração de fachadas e revitalização de áreas comuns.
-            </p>
-            <ul class="service-features-list">
-              <li><i class="fa-solid fa-check"></i> Lavagem e pintura de fachadas</li>
-              <li><i class="fa-solid fa-check"></i> Tratamento de fissuras e infiltrações</li>
-              <li><i class="fa-solid fa-check"></i> Manutenção de portarias e garagens</li>
-            </ul>
-            <div class="service-footer">
-              <button class="btn-detail-modal" data-modal="modal-predial">
-                Mais Detalhes <i class="fa-solid fa-chevron-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Service Card 3: Elétrica em Geral -->
-        <div class="service-card" data-category="eletrica">
-          <div class="service-img-holder">
-            <img src="./images/eletrica_geral.png" alt="Elétrica em Geral MKL">
-            <div class="service-category-tag">Elétrica</div>
-          </div>
-          <div class="service-content">
-            <div class="service-icon"><i class="fa-solid fa-bolt"></i></div>
-            <h3 class="service-title">Instalações Elétricas em Geral</h3>
-            <p class="service-text">
-              Projetos e montagens elétricas para residências, edifícios e comércios. Montagem de quadros de disjuntores, substituição de fiação antiga e cabeamento estruturado.
-            </p>
-            <ul class="service-features-list">
-              <li><i class="fa-solid fa-check"></i> Reorganização de quadros de luz</li>
-              <li><i class="fa-solid fa-check"></i> Padrão de entrada (Eletropaulo/Enel/CPFL)</li>
-              <li><i class="fa-solid fa-check"></i> Iluminação decorativa e fita LED</li>
-            </ul>
-            <div class="service-footer">
-              <button class="btn-detail-modal" data-modal="modal-eletrica">
-                Mais Detalhes <i class="fa-solid fa-chevron-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Service Card 4: Laudos & Inspeções -->
-        <div class="service-card" data-category="eletrica">
-          <div class="service-img-holder">
-            <img src="./images/eletrica_geral.png" alt="Laudos Elétricos NBR">
-            <div class="service-category-tag">Engenharia Elétrica</div>
-          </div>
-          <div class="service-content">
-            <div class="service-icon"><i class="fa-solid fa-file-contract"></i></div>
-            <h3 class="service-title">Laudos Elétricos & ART (NBR 5410)</h3>
-            <p class="service-text">
-              Inspeção técnica completa com emissão de laudo de instalações elétricas para obtenção de alvará, renovação de AVBC e vistoria de segurança predial.
-            </p>
-            <ul class="service-features-list">
-              <li><i class="fa-solid fa-check"></i> Termografia e teste de carga</li>
-              <li><i class="fa-solid fa-check"></i> Medição de aterramento elétrico (SPDA)</li>
-              <li><i class="fa-solid fa-check"></i> Emissão de Anotação de Responsabilidade Técnica</li>
-            </ul>
-            <div class="service-footer">
-              <button class="btn-detail-modal" data-modal="modal-laudos">
-                Mais Detalhes <i class="fa-solid fa-chevron-right"></i>
-              </button>
-            </div>
+      <div class="col-lg-12 destaque-card">
+        <div class="card">
+          <img src="imagem/serviço-eletrica-eletricista-residencial-pedreiro-Obra lage.jpg" class="card-img-top" alt="Projeto 3">
+          <div class="card-body">
+            <p class="card-text">Projeto 3: descrição resumida do serviço ou resultado alcançado.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Budget Calculator Section -->
-  <section id="simulador" class="calculator-section">
-    <div class="container">
-      <div class="calculator-wrapper">
-        <div class="calculator-header text-center">
-          <span class="badge-subtitle"><i class="fa-solid fa-calculator"></i> Calculadora Online</span>
-          <h2 class="section-title">Simule seu Orçamento em Segundos</h2>
-          <p class="section-description">
-            Selecione o tipo de serviço que você precisa e obtenha uma estimativa instantânea pronta para ser enviada diretamente ao nosso atendimento.
-          </p>
-        </div>
-
-        <div class="calculator-grid">
-          <!-- Options Form -->
-          <div class="calc-form">
-            <!-- Step 1: Service Type -->
-            <div class="calc-group">
-              <label class="calc-label"><span class="step-num">1</span> Qual o tipo de serviço principal?</label>
-              <div class="service-options-grid">
-                <div class="calc-option-card active" data-service="residencial" data-base="1500">
-                  <i class="fa-solid fa-house-chimney"></i>
-                  <span>Reforma Residencial</span>
-                </div>
-                <div class="calc-option-card" data-service="predial" data-base="3500">
-                  <i class="fa-solid fa-building"></i>
-                  <span>Reforma Predial</span>
-                </div>
-                <div class="calc-option-card" data-service="eletrica" data-base="800">
-                  <i class="fa-solid fa-bolt"></i>
-                  <span>Elétrica em Geral</span>
-                </div>
-                <div class="calc-option-card" data-service="emergencia" data-base="450">
-                  <i class="fa-solid fa-triangle-exclamation"></i>
-                  <span>Emergência 24h</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Step 2: Scope / Size -->
-            <div class="calc-group">
-              <label class="calc-label"><span class="step-num">2</span> Porte do Imóvel / Quantidade de Ambientes</label>
-              <div class="range-slider-box">
-                <div class="range-values">
-                  <span>Tamanho Estimado: <strong id="rangeAreaVal">50 m²</strong></span>
-                  <span class="range-sub" id="rangeSubText">(Pequeno Porte)</span>
-                </div>
-                <input type="range" id="sizeRange" min="20" max="300" step="10" value="50" class="custom-range">
-                <div class="range-minmax">
-                  <span>20 m²</span>
-                  <span>150 m²</span>
-                  <span>300+ m²</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Step 3: Extras Checklist -->
-            <div class="calc-group">
-              <label class="calc-label"><span class="step-num">3</span> Itens Adicionais Desejados</label>
-              <div class="checklist-grid">
-                <label class="checkbox-card">
-                  <input type="checkbox" id="chkQuadro" value="500" checked>
-                  <span class="checkmark"><i class="fa-solid fa-check"></i></span>
-                  <span>Troca de Quadro Elétrico</span>
-                </label>
-                <label class="checkbox-card">
-                  <input type="checkbox" id="chkPintura" value="800" checked>
-                  <span class="checkmark"><i class="fa-solid fa-check"></i></span>
-                  <span>Pintura e Acabamento Fino</span>
-                </label>
-                <label class="checkbox-card">
-                  <input type="checkbox" id="chkIluminacao" value="600">
-                  <span class="checkmark"><i class="fa-solid fa-check"></i></span>
-                  <span>Projeto de Iluminação LED</span>
-                </label>
-                <label class="checkbox-card">
-                  <input type="checkbox" id="chkLaudo" value="400">
-                  <span class="checkmark"><i class="fa-solid fa-check"></i></span>
-                  <span>Laudo Técnico & ART</span>
-                </label>
-              </div>
-            </div>
-          </div>
-
-          <!-- Result Box -->
-          <div class="calc-result-panel">
-            <div class="result-box-inner">
-              <div class="result-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Estimativa Calculada</div>
-              <div class="result-title">Valor Estimado do Projeto:</div>
-              <div class="result-price" id="calcPriceDisplay">R$ 2.800,00</div>
-              <p class="result-note">*Estimativa aproximada. O valor final pode variar após visita técnica gratuita no local.</p>
-
-              <div class="result-summary" id="resultSummaryList">
-                <div class="summary-item">
-                  <span>Serviço:</span> <strong id="sumService">Reforma Residencial</strong>
-                </div>
-                <div class="summary-item">
-                  <span>Área:</span> <strong id="sumArea">50 m²</strong>
-                </div>
-                <div class="summary-item">
-                  <span>Prazo Estimado:</span> <strong id="sumDays">5 a 8 Dias Úteis</strong>
-                </div>
-              </div>
-
-              <a href="#" id="btnSendWhatsappCalc" class="btn btn-whatsapp-full" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-whatsapp"></i> Enviar este Orçamento no WhatsApp
-              </a>
-
-              <div class="guarantee-box">
-                <i class="fa-solid fa-shield-cat"></i>
-                <span>Atendimento prioritário com visita técnica sem compromisso em SP e Região!</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- PORTFÓLIO -->
+  <section id="portfolio" class="container text-center">
+    <h2>Nosso Portfólio</h2>
+    <div class="row mt-4 g-3">
+      <div class="col-md-4"><img src="imagem/Captura de tela PERFIL.png" class="img-fluid rounded" alt="Projeto 1"></div>
+      <div class="col-md-4"><img src="imagem/electric-4198293_640.jpg" class="img-fluid rounded" alt="Projeto 2"></div>
+      <div class="col-md-4"><img src="imagem/istockphoto-937114374-1024x1024 tomada.jpg" class="img-fluid rounded" alt="Projeto 3"></div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="sobre" class="about-section">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-images">
-          <div class="about-img-main">
-            <img src="./images/hero_banner.png" alt="Equipe MKL Serviços">
-          </div>
-          <div class="about-experience-card">
-            <span class="exp-num">100%</span>
-            <span class="exp-text">Compromisso com Normas de Segurança</span>
-          </div>
+  <!-- CONTATO -->
+  <section class="bg-light py-5" id="contato">
+    <div class="container text-center">
+      <h2>Entre em Contato</h2>
+      <form class="mt-4">
+        <div class="row g-3">
+          <div class="col-md-4"><input type="text" class="form-control" placeholder="Seu nome" required></div>
+          <div class="col-md-4"><input type="email" class="form-control" placeholder="Seu e-mail" required></div>
+          <div class="col-md-4"><input type="text" class="form-control" placeholder="Telefone (opcional)"></div>
+          <div class="col-12"><textarea class="form-control" rows="4" placeholder="Sua mensagem" required></textarea></div>
+          <div class="col-12"><button type="submit" class="btn btn-custom mt-3">Enviar Mensagem</button></div>
         </div>
-
-        <div class="about-content">
-          <span class="badge-subtitle">Conheça a MKL Serviços</span>
-          <h2 class="section-title">Tradição, Segurança e Inovação em Reformas e Elétrica</h2>
-          <p class="about-lead">
-            Na <strong>MKL Serviços</strong>, combinamos expertise técnica em engenharia elétrica com mestria em construção civil e reformas residenciais e condominiais.
-          </p>
-          <p class="about-body">
-            Sabemos que um projeto de reforma ou uma manutenção elétrica exige máxima responsabilidade. Por isso, trabalhamos rigorosamente dentro das diretrizes da <strong>NBR 5410</strong> e normas de segurança do trabalho, entregando ambientes modernos, seguros e valorizados.
-          </p>
-
-          <div class="about-bullets">
-            <div class="about-bullet-item">
-              <div class="bullet-icon"><i class="fa-solid fa-broom"></i></div>
-              <div>
-                <h4>Obra Limpa e Organizada</h4>
-                <p>Respeito ao seu imóvel com proteção de móveis e limpeza diária.</p>
-              </div>
-            </div>
-            <div class="about-bullet-item">
-              <div class="bullet-icon"><i class="fa-solid fa-clock"></i></div>
-              <div>
-                <h4>Pontualidade no Cronograma</h4>
-                <p>Cláusula contratual com prazos rígidos de início e término.</p>
-              </div>
-            </div>
-            <div class="about-bullet-item">
-              <div class="bullet-icon"><i class="fa-solid fa-handshake"></i></div>
-              <div>
-                <h4>Transparência Financeira</h4>
-                <p>Orçamento detalhado sem custos surpresa no meio da obra.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </form>
     </div>
   </section>
 
-  <!-- Portfolio Showcase Section -->
-  <section id="portfolio" class="portfolio-section">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="badge-subtitle">Nosso Portfólio</span>
-        <h2 class="section-title">Projetos Executados com Excelência</h2>
-        <p class="section-description">Confira alguns de nossos trabalhos em reformas residenciais, prédios e montagens elétricas.</p>
-      </div>
-
-      <div class="portfolio-grid">
-        <div class="portfolio-card">
-          <div class="portfolio-img-box">
-            <img src="./images/reforma_residencial.png" alt="Projeto Residencial">
-            <div class="portfolio-overlay">
-              <span class="portfolio-cat">Reforma Residencial</span>
-              <h4 class="portfolio-title">Renovação Completa de Apartamento 120m²</h4>
-              <p>Troca de revestimentos, nova iluminação e pintura acetinada.</p>
-            </div>
-          </div>
+  <!-- RODAPÉ -->
+  <footer class="text-center text-lg-start">
+    <div class="container py-4">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">MKL Serviços</h5>
+          <p>"Oferecemos serviços completos de manutenção residencial e predial, garantindo qualidade, segurança e eficiência em cada atendimento."</p>
         </div>
-
-        <div class="portfolio-card">
-          <div class="portfolio-img-box">
-            <img src="./images/eletrica_geral.png" alt="Projeto Elétrico">
-            <div class="portfolio-overlay">
-              <span class="portfolio-cat">Elétrica Predial</span>
-              <h4 class="portfolio-title">Modernização de QDF Condominial</h4>
-              <p>Reorganização total de barramentos e disjuntores DIN.</p>
-            </div>
-          </div>
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Contato</h5>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Rua+Júlia+Lemos+Rogério+16+Casa+Branca+Suzano+SP" target="_blank" class="contact-link"><i class="bi bi-geo-alt-fill"></i>Rua Júlia Lemos Rogério n⁰16 Casa Branca Suzano SP CEP 08663-510</a></p>
+          <p><a href="tel:+5511940392547" class="contact-link"><i class="bi bi-telephone-fill"></i>+55 11 94039-2547</a></p>
+          <p><a href="mailto:mklservicos@yahoo.com" class="contact-link"><i class="bi bi-envelope-fill"></i>mklservicos@yahoo.com</a></p>
         </div>
-
-        <div class="portfolio-card">
-          <div class="portfolio-img-box">
-            <img src="./images/reforma_predial.png" alt="Projeto Predial">
-            <div class="portfolio-overlay">
-              <span class="portfolio-cat">Reforma Predial</span>
-              <h4 class="portfolio-title">Restauração de Fachada & Pintura</h4>
-              <p>Tratamento de trincas e nova pintura em edifício residencial.</p>
-            </div>
-          </div>
+        <div class="col-md-4 mb-3">
+          <h5 class="fw-bold">Siga-nos</h5>
+          <a href="https://www.facebook.com/seuPerfil" target="_blank" class="text-white me-3"><i class="bi bi-facebook fs-4"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" class="text-white me-3"><i class="bi bi-instagram fs-4"></i></a>
+          <a href="https://www.linkedin.com/home" target="_blank" class="text-white"><i class="bi bi-linkedin fs-4"></i></a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section id="depoimentos" class="testimonials-section">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="badge-subtitle">Depoimentos</span>
-        <h2 class="section-title">O que nossos clientes dizem</h2>
-      </div>
-
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p class="testimonial-text">
-            "A equipe da MKL Serviços fez a reforma inteira do meu apartamento e a readequação da parte elétrica. Foram extremamente pontuais, limpos e transparentes com os custos!"
-          </p>
-          <div class="testimonial-user">
-            <div class="user-avatar">RC</div>
-            <div>
-              <strong>Ricardo Carvalho</strong>
-              <span>Proprietário de Imóvel - SP</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p class="testimonial-text">
-            "Contratamos a MKL para a reforma predial do nosso condomínio e a revisão dos quadros de luz gerais. Trabalho impecável, laudo NBR entregue rapidamente e ótimo atendimento aos moradores."
-          </p>
-          <div class="testimonial-user">
-            <div class="user-avatar">MS</div>
-            <div>
-              <strong>Mariana Silva</strong>
-              <span>Síndica Profissional</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="stars">
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-          </div>
-          <p class="testimonial-text">
-            "Tive uma emergência elétrica na minha loja no final de semana. A MKL enviou um eletricista em menos de 45 minutos e resolveu o curto no quadro principal. Recomendo de olhos fechados!"
-          </p>
-          <div class="testimonial-user">
-            <div class="user-avatar">FA</div>
-            <div>
-              <strong>Fernando Almeida</strong>
-              <span>Empresário</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contato" class="contact-section">
-    <div class="container">
-      <div class="contact-card-wrapper">
-        <div class="contact-grid">
-          <div class="contact-info">
-            <span class="badge-subtitle">Fale Conosco</span>
-            <h2 class="section-title text-white">Pronto para iniciar seu projeto com a MKL Serviços?</h2>
-            <p class="contact-desc">
-              Entre em contato agora mesmo. Atendemos chamados residenciais, prediais e comerciais com agilidade.
-            </p>
-
-            <div class="contact-details">
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
-                <div>
-                  <span class="contact-label">Telefone / Atendimento</span>
-                  <a href="tel:+5511999999999" class="contact-value">(11) 99999-9999</a>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
-                <div>
-                  <span class="contact-label">WhatsApp Comercial 24h</span>
-                  <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" class="contact-value">(11) 99999-9999</a>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-                <div>
-                  <span class="contact-label">E-mail para Orçamentos</span>
-                  <a href="mailto:contato@mklservicos.com.br" class="contact-value">contato@mklservicos.com.br</a>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
-                <div>
-                  <span class="contact-label">Região de Atendimento</span>
-                  <span class="contact-value">São Paulo, Grande SP e Região Metropolitana</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="contact-form-box">
-            <h3 class="form-title">Envie uma Mensagem</h3>
-            <form id="contactForm" class="form-element">
-              <div class="form-group">
-                <label for="name">Seu Nome Completo</label>
-                <input type="text" id="name" required placeholder="Ex: João da Silva">
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="phone">Telefone / WhatsApp</label>
-                  <input type="tel" id="phone" required placeholder="(11) 99999-9999">
-                </div>
-                <div class="form-group">
-                  <label for="serviceType">Serviço de Interesse</label>
-                  <select id="serviceType" required>
-                    <option value="Reforma Residencial">Reforma Residencial</option>
-                    <option value="Reforma Predial">Reforma Predial</option>
-                    <option value="Elétrica em Geral">Elétrica em Geral</option>
-                    <option value="Emergência Elétrica">Emergência 24h</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="message">Detalhes do Serviço / Projeto</label>
-                <textarea id="message" rows="4" required placeholder="Descreva brevemente o que você precisa reformar ou instalar..."></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-full">
-                <span>Enviar Solicitação de Orçamento</span>
-                <i class="fa-solid fa-paper-plane"></i>
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#" class="brand-logo">
-            <div class="logo-icon">
-              <i class="fa-solid fa-plug-circle-bolt"></i>
-            </div>
-            <div class="logo-text">
-              <span class="logo-name">MKL <span class="text-gradient">SERVIÇOS</span></span>
-              <span class="logo-sub">REFORMAS & ELÉTRICA</span>
-            </div>
-          </a>
-          <p class="footer-text">
-            Sua parceira de confiança em reformas residenciais, prediais e instalações elétricas completas. Segurança NBR, pontualidade e transparência.
-          </p>
-        </div>
-
-        <div class="footer-links">
-          <h4>Links Rápidos</h4>
-          <ul>
-            <li><a href="#inicio">Início</a></li>
-            <li><a href="#sobre">Sobre Nós</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#simulador">Simulador de Orçamento</a></li>
-            <li><a href="#contato">Contato</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-services">
-          <h4>Especialidades</h4>
-          <ul>
-            <li><a href="#servicos">Reforma Residencial</a></li>
-            <li><a href="#servicos">Reforma Predial & Condomínios</a></li>
-            <li><a href="#servicos">Elétrica Residencial e Industrial</a></li>
-            <li><a href="#servicos">Laudos Técnicos e NBR 5410</a></li>
-            <li><a href="#servicos">Atendimento Emergencial 24h</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>&copy; 2026 MKL Serviços. Todos os direitos reservados. reforma de residencial e predial , eletrica em geral.</p>
-      </div>
+      <hr class="border-light">
+      <div class="text-center"><p class="mb-0">© 2025 MKL Serviços — Todos os direitos reservados.</p><small>CNPJ: 40.933.280/0001-05</small></div>
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/5511999999999?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20MKL%20Servi%C3%A7os%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Atendimento WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-    <span class="whatsapp-tooltip">Atendimento Rápido WhatsApp</span>
-  </a>
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button id="btnTopo" title="Voltar ao Topo"><i class="bi bi-arrow-up"></i></button>
 
-  <!-- Modals for Service Details -->
-  <div class="modal-overlay" id="serviceModal">
-    <div class="modal-card">
-      <button class="modal-close" id="modalClose">&times;</button>
-      <div class="modal-body" id="modalBody">
-        <!-- Content inserted dynamically via JS -->
-      </div>
-    </div>
-  </div>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Botão voltar ao topo
+    const btnTopo = document.getElementById("btnTopo");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        btnTopo.style.display = "flex";
+      } else {
+        btnTopo.style.display = "none";
+      }
+    };
+    btnTopo.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
-  <script type="module" src="./main.js"></script>
+    // 🔝 Garante que o site sempre abra no topo
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 100);
+    });
+
+    window.addEventListener("pageshow", () => {
+      window.scrollTo(0, 0);
+    });
+  </script>
 </body>
 </html>
