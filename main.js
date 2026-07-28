@@ -2,6 +2,12 @@
    MKL SERVIÇOS - JAVASCRIPT INTERACTIVITY
    ========================================================================== */
 
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+const supabaseUrl = 'https://zdnxyuggkkpulfasjnsf.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inpkbnh5dWdna2twdWxmYXNqbnNmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODUyMjIwNzIsImV4cCI6MjEwMDc5ODA3Mn0.MAXZEzBBD9AKWZLIJSRG1toYcK56fgy3XEoy7sbCvm0';
+const supabase = createClient(supabaseUrl, supabaseKey);
+
 document.addEventListener('DOMContentLoaded', () => {
   initThemeSystem();
   initMobileMenu();
@@ -11,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initAnimatedCounters();
   initContactForm();
 });
+
 
 /* --------------------------------------------------------------------------
    1. MOBILE MENU TOGGLE
@@ -278,7 +285,7 @@ function initModalSystem() {
             ${data.items.map(item => `<li><i class="fa-solid fa-circle-check text-accent"></i> ${item}</li>`).join('')}
           </ul>
           <div class="modal-cta">
-            <a href="https://wa.me/5511999999999?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20${encodeURIComponent(data.title)}" target="_blank" class="btn btn-primary btn-full">
+            <a href="https://wa.me/5511940392547?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20${encodeURIComponent(data.title)}" target="_blank" class="btn btn-primary btn-full">
               <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento no WhatsApp
             </a>
           </div>
@@ -343,12 +350,26 @@ function initContactForm() {
   const form = document.getElementById('contactForm');
 
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = document.getElementById('name').value;
       const phone = document.getElementById('phone').value;
       const service = document.getElementById('serviceType').value;
       const message = document.getElementById('message').value;
+
+      try {
+        // Envia para o Supabase no banco de dados
+        const { error } = await supabase.from('leads').insert([
+          { name, phone, service, message }
+        ]);
+        if (error) {
+          console.error('Erro ao enviar contato para o Supabase:', error.message);
+        } else {
+          console.log('Contato gravado com sucesso no Supabase.');
+        }
+      } catch (err) {
+        console.error('Falha na comunicação com o banco de dados:', err);
+      }
 
       const waText = encodeURIComponent(
         `*Nova solicitação via site MKL Serviços:*
